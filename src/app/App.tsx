@@ -10,6 +10,11 @@ import NetworkDashboard from './components/NetworkDashboard';
 import AnalyticsPage from './components/AnalyticsPage';
 import MembersPage from './components/MembersPage';
 import ModHistoryPage from './components/ModHistoryPage';
+import WarningsPage from './components/WarningsPage';
+import ManageGroupsPage from './components/ManageGroupsPage';
+import GroupComparisonPage from './components/GroupComparisonPage';
+import BroadcastPage from './components/BroadcastPage';
+import MemberDirectoryPage from './components/MemberDirectoryPage';
 
 // ─── Placeholder page ─────────────────────────────────────────────────────────
 function PlaceholderPage({ title, description }: { title: string; description?: string }) {
@@ -55,7 +60,7 @@ function AppShell({
         <Route path="/statistics"    element={<AnalyticsPage />} />
         <Route path="/members"       element={<MembersPage />} />
         <Route path="/mod-history"   element={<ModHistoryPage />} />
-        <Route path="/warnings"      element={<PlaceholderPage title="Warnings" description="Member warning records" />} />
+        <Route path="/warnings"      element={<WarningsPage />} />
         <Route path="/modules"       element={<ModulesPage />} />
         <Route path="/filters"       element={<FiltersPage />} />
         <Route path="/triggers"      element={<PlaceholderPage title="Triggers" description="Custom automation rules" />} />
@@ -72,10 +77,10 @@ function AppShell({
         {/* ── Network-level routes ── */}
         <Route path="/network"                element={<NetworkDashboard theme={theme} onThemeToggle={onThemeToggle} />} />
         <Route path="/network/analytics"      element={<PlaceholderPage title="Network Analytics" description="Cross-group statistics and trends" />} />
-        <Route path="/network/groups"         element={<PlaceholderPage title="Manage Groups" description="Add, remove, and organise groups in this network" />} />
-        <Route path="/network/comparison"     element={<PlaceholderPage title="Group Comparison" description="Side-by-side group performance comparison" />} />
-        <Route path="/network/broadcast"      element={<PlaceholderPage title="Broadcast" description="Send a message to all groups in this network" />} />
-        <Route path="/network/members"        element={<PlaceholderPage title="Member Directory" description="Unified member list across all groups" />} />
+        <Route path="/network/groups"         element={<ManageGroupsPage />} />
+        <Route path="/network/comparison"     element={<GroupComparisonPage />} />
+        <Route path="/network/broadcast"      element={<BroadcastPage />} />
+        <Route path="/network/members"        element={<MemberDirectoryPage />} />
         <Route path="/network/mod-log"        element={<PlaceholderPage title="Moderation Log" description="Network-wide moderation history" />} />
         <Route path="/network/shared-modules" element={<PlaceholderPage title="Shared Modules" description="Modules applied to every group in this network" />} />
         <Route path="/network/shared-filters" element={<PlaceholderPage title="Shared Filters" description="Filter rules inherited by all groups" />} />
